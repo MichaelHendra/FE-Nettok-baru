@@ -13,6 +13,7 @@ import GenreMovie from "./page/GenreMovie";
 import User from "./page/User";
 import Subcribe from "./page/Subcribe";
 import PlayPay from "./component/PlayPay";
+import Search from "./page/Search";
 
 
 
@@ -56,6 +57,7 @@ const App = () => {
                 <Route path="/genre/:id" element={<GenreMovie />} />
                 <Route path="/user/" element = {<User />} />
                 <Route path="/subcribe" element ={<Subcribe />}/>
+                <Route path="/search" element ={<Search />}/>
             </Routes>
             <Footer />
             <Modal isOpen={isModalOpen} onClose={closeModal} />
