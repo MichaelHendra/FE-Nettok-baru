@@ -1,36 +1,50 @@
 import { Link } from "react-router-dom";
-import cssModule from "./Genre.module.css"
+import cssModule from "./Genre.module.css";
 import { useEffect, useState } from "react";
-function Genre (){
-    const [genres,setGenre] = useState([]);
-    
-    useEffect(() =>{
-        const fetchGenre = async () =>{
-            try{
+
+function Genre() {
+    const [genres, setGenre] = useState([]);
+    const [slideIndex, setSlideIndex] = useState(0);
+
+    useEffect(() => {
+        const fetchGenre = async () => {
+            try {
                 const response = await fetch(`http://localhost:8000/api/jenis`);
                 const data = await response.json();
                 console.log("Fetched data:", data);
-                if (Array.isArray(data)){
+                if (Array.isArray(data)) {
                     setGenre(data);
-                }else{
+                } else {
                     console.error("Expected an array but got:", data);
                 }
-            } catch (error){
+            } catch (error) {
                 console.error("Error fetching jenis:", error);
             }
         };
         fetchGenre();
     }, []);
 
-return (
-    <div className={cssModule.BG}>
-        <div className={cssModule.linkList}>
-            {genres.map((genre, index) => (
-                <Link key={index} className={cssModule.linkGenre} to={`/genre/${genre.jenis_id}`}>{genre.jenis}</Link>
-            ))}
+    const slideLeft = () => {
+        setSlideIndex((prev) => Math.max(prev - 1, 0));
+    };
+
+    const slideRight = () => {
+        setSlideIndex((prev) => Math.min(prev + 1, genres.length - 1));
+    };
+
+    return (
+        <div className={cssModule.BG}>
+            <button onClick={slideLeft} className={cssModule.slideButton}>{"<"}</button>
+            <div className={cssModule.linkListContainer}>
+                <div className={cssModule.linkList} style={{ transform: `translateX(-${slideIndex * 100}%)` }}>
+                    {genres.map((genre, index) => (
+                        <Link key={index} className={cssModule.linkGenre} to={`/genre/${genre.jenis_id}`}>{genre.jenis}</Link>
+                    ))}
+                </div>
+            </div>
+            <button onClick={slideRight} className={cssModule.slideButton}>{">"}</button>
         </div>
-    </div>
-);
+    );
 }
 
-export default Genre
+export default Genre;

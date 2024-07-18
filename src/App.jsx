@@ -14,6 +14,9 @@ import User from "./page/User";
 import Subcribe from "./page/Subcribe";
 import PlayPay from "./component/PlayPay";
 import Search from "./page/Search";
+import FormJenisAdd from "./page/Jenis/FormJenisAdd";
+import FormJenis from "./page/Jenis/FormJenis";
+import FormJenisEdit from "./page/Jenis/FormJenisEdit";
 
 
 
@@ -58,6 +61,9 @@ const App = () => {
                 <Route path="/user/" element = {<User />} />
                 <Route path="/subcribe" element ={<Subcribe />}/>
                 <Route path="/search" element ={<Search />}/>
+                <Route path="/jenisform" element= {<FormJenis />} />
+                <Route path="/jenisformadd" element ={<FormJenisAdd />}/>
+                <Route path="/jenisformedit/:id" element={<FormJenisEdit />} />
             </Routes>
             <Footer />
             <Modal isOpen={isModalOpen} onClose={closeModal} />
