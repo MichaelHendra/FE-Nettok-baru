@@ -63,7 +63,7 @@ const App = () => {
                 <Route path="/genre/:id" element={<GenreMovie />} />
                 <Route path="/user/" element = {<User />} />
                 <Route path="/subcribe" element ={<Subcribe />}/>
-                <Route path="/search" element ={<Search />}/>
+                <Route path="/search/:key" element ={<Search />}/>
                 <Route path="/jenisform" element= {<FormJenis />} />
                 <Route path="/jenisformadd" element ={<FormJenisAdd />}/>
                 <Route path="/jenisformedit/:id" element={<FormJenisEdit />} />
