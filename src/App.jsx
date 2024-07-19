@@ -17,6 +17,9 @@ import Search from "./page/Search";
 import FormJenisAdd from "./page/Jenis/FormJenisAdd";
 import FormJenis from "./page/Jenis/FormJenis";
 import FormJenisEdit from "./page/Jenis/FormJenisEdit";
+import MovieForm from "./page/Movie/MovieForm";
+import MovieAdd from "./page/Movie/MovieAdd";
+import MovieUpdate from "./page/Movie/MovieUpdate";
 
 
 
@@ -64,6 +67,9 @@ const App = () => {
                 <Route path="/jenisform" element= {<FormJenis />} />
                 <Route path="/jenisformadd" element ={<FormJenisAdd />}/>
                 <Route path="/jenisformedit/:id" element={<FormJenisEdit />} />
+                <Route path="/movieform" element={<MovieForm />}/>
+                <Route path="/movieformadd" element={<MovieAdd />} />
+                <Route path="/movieformedit/:id" element={<MovieUpdate />} />
             </Routes>
             <Footer />
             <Modal isOpen={isModalOpen} onClose={closeModal} />
