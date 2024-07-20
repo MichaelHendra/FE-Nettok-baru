@@ -1,6 +1,5 @@
 import cssModule from './Search.module.css';
-import gambar1 from '../assets/gambar1.png';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 
 function Search() {
@@ -22,7 +21,8 @@ function Search() {
         <div className={cssModule.BgSearch}>
             <div className={cssModule.ContainerSearch}>
             {movies.map((movie, index) => (
-                <div key={index} className={cssModule.float}>
+                <Link key={index} className={cssModule.linkKey} to={`/play/${movie.id}`}>
+                <div className={cssModule.float}>
                     <div className={cssModule.imgSearchDiv}>
                         <img className={cssModule.imgSearch} src={movie.image_url} alt='Gambar 1' />
                     </div>
@@ -31,6 +31,7 @@ function Search() {
                         <p>{movie.desk}</p>
                     </div>
                 </div>
+                </Link>
                 ))}
             </div>
         </div>
