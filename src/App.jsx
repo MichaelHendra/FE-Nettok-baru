@@ -10,7 +10,7 @@ import Home from "./page/home";
 import Modal from "./component/Modal";
 import Register from "./component/registerModal";
 import GenreMovie from "./page/GenreMovie";
-import User from "./page/User";
+import User from "./page/user/User";
 import Subcribe from "./page/Subcribe";
 import PlayPay from "./component/PlayPay";
 import Search from "./page/Search";
@@ -20,6 +20,7 @@ import FormJenisEdit from "./page/Jenis/FormJenisEdit";
 import MovieForm from "./page/Movie/MovieForm";
 import MovieAdd from "./page/Movie/MovieAdd";
 import MovieUpdate from "./page/Movie/MovieUpdate";
+import UserEdit from "./page/user/UserEdit";
 
 
 
@@ -62,6 +63,7 @@ const App = () => {
                 <Route path="/play/:id" element={<Play openModal={openModal} openModalPay={openModalPay} />} />
                 <Route path="/genre/:id" element={<GenreMovie />} />
                 <Route path="/user/" element = {<User />} />
+                <Route path="/user/update/" element={<UserEdit />} />
                 <Route path="/subcribe" element ={<Subcribe />}/>
                 <Route path="/search/:key" element ={<Search />}/>
                 <Route path="/jenisform" element= {<FormJenis />} />

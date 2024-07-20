@@ -1,0 +1,46 @@
+.BgForm{
+    position: relative;
+    overflow: hidden;
+    background-color: #141414;
+    color: white;
+    padding: 4%;
+}
+.conteinterForm{
+    padding: 4%;
+    background-color: gray;
+}
+.conteinterForm h3 {
+    margin-top: 0%;
+}
+.Formgroup{
+    margin-bottom: 15px;
+}
+.Formgroup label{
+    display: block;
+}
+.Formgroup input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border-width: 0px;
+    border-radius: 10px;
+}
+.Formgroup button {
+    padding: 8px 16px;
+    border-radius: 10px;
+    border-width: 0px;
+    transition: background-color 0.3s, color 0.3s;
+}
+.Formgroup button:hover {
+    background-color: gray;
+}
+.Table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.Table th, .Table td {
+    border: 1px solid white;
+    text-align: left;
+    padding: 8px;
+}

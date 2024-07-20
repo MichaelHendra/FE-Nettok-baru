@@ -22,7 +22,9 @@ function MovieUpdate() {
                     }
                 });
                 const data = await response.json();
+                console.log(data);
                 if (response.ok) {
+                    console.log(data.judul_movie);
                     setJudul(data.judul_movie);
                     setDesk(data.desk);
                     setTanggal_Rilis(data.tanggal_rilis);
@@ -72,8 +74,6 @@ function MovieUpdate() {
                 },
                 body: formData
             });
-            console.log(formData);
-
             if (!response.ok) {
                 const errorText = await response.text();
                 console.error('Error response:', errorText);
