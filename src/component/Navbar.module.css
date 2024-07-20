@@ -81,4 +81,7 @@ li{
     text-decoration: none;
     color: black;
     padding: 14px 16px;
-} 
+}
+.inputSearch{
+   border-radius: 10px;
+}

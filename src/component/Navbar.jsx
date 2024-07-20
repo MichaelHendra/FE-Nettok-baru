@@ -83,7 +83,7 @@ function Navbar({ openModal, openModalRegister }) {
               <button type="submit" className={cssModule.btnSearch}><img src={Cari} alt="cari" className={cssModule.Sd} /></button>
             </li>
             <li className={`${cssModule.kanan} ${cssModule.search}`}>
-              <input type="text" id="key" name="key" value={key} onChange={(e) => setKey(e.target.value)} />
+              <input className={cssModule.inputSearch} size='50' type="text" id="key" name="key" value={key} onChange={(e) => setKey(e.target.value)} />
             </li>
           </form>
         </ul>
