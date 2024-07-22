@@ -6,7 +6,7 @@ function FormJenisAdd () {
     const token = localStorage.getItem('token');
     const fetchJenis = async() => {
         try{
-            const response = await fetch('http://localhost:8000/api/jenis/add', {
+            const response = await fetch('https://bet-nettok-dep.vercel.app/api/api/jenis/add', {
                 method: "POST",
                 headers: {
                     'Content-Type': 'application/json',

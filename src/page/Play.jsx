@@ -9,7 +9,27 @@ import { isAuthenticated } from "../utils/auth";
 function Play({ openModal, openModalPay }) {
     const { id } = useParams();
     const [movie, setMovie] = useState(null);
-    const valid = localStorage.getItem('valid');
+    const [user, setUser] = useState(null);
+    const userId = localStorage.getItem("userId");
+    const token = localStorage.getItem("token");
+    useEffect(() => {
+        const fetchUser = async () => {
+            try {
+                const response = await fetch(`https://bet-nettok-dep.vercel.app/api/api/user/${userId}`, {
+                    method: 'GET',
+                    headers: {
+                        'Authorization': `Bearer ${token}`
+                    },
+                });
+                const data = await response.json();
+                let ngaw = localStorage.setItem('valid', data.valid_date);
+                setUser(data);
+            } catch (error) {
+                console.error("Error fetching user:", error);
+            }
+        };
+        fetchUser();
+    }, [userId, token]);
 
     function getCurrentDate() {
         const today = new Date();
@@ -18,12 +38,12 @@ function Play({ openModal, openModalPay }) {
         const day = String(today.getDate()).padStart(2, '0');
         return `${year}-${month}-${day}`;
     }
-    console.log(getCurrentDate());
+    let valid = localStorage.getItem('valid');
 
     useEffect(() => {
         const fetchMovie = async () => {
             try {
-                const response = await fetch(`http://localhost:8000/api/movies/show/${id}`);
+                const response = await fetch(`https://bet-nettok-dep.vercel.app/api/api/movies/show/${id}`);
                 const result = await response.json();
                 console.log("Fetched data:", result);
                 if (response.ok) {

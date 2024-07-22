@@ -10,7 +10,7 @@ function FormJenisEdit() {
     const token = localStorage.getItem('token');
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/api/jenis/${id}`, {
+        axios.get(`https://bet-nettok-dep.vercel.app/api/api/jenis/${id}`, {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`
@@ -27,7 +27,7 @@ function FormJenisEdit() {
     const fetchJenis = async (event) => {
         event.preventDefault();
         try {
-            const response = await fetch(`http://localhost:8000/api/jenis/update/${id}`, {
+            const response = await fetch(`https://bet-nettok-dep.vercel.app/api/api/jenis/update/${id}`, {
                 method: "PUT",
                 headers: {
                     'Content-Type': 'application/json',

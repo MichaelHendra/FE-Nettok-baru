@@ -5,7 +5,7 @@ function MovieForm () {
     const [movies, setMovie] = useState([]);
     useEffect(() => {
         const fetchMovie = async () => {
-            const response = await fetch('http://localhost:8000/api/movies');
+            const response = await fetch('https://bet-nettok-dep.vercel.app/api/api/movies');
             const result = await response.json();
             console.log("Fetched data:", result);
             if(response.ok){

@@ -7,7 +7,7 @@ function Search() {
     const [movies, setMovie] = useState([]);
     useEffect(() => {
         const fetchSearch = async () => {
-            const response = await fetch(`http://localhost:8000/api/search/${key}`);
+            const response = await fetch(`https://bet-nettok-dep.vercel.app/api/api/search/${key}`);
             const result = await response.json();
             if(response.ok){
                 setMovie(result);

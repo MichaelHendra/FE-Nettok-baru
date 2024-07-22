@@ -21,7 +21,7 @@ function MovieAdd() {
         formData.append('movie_link', movie);
 
         try {
-            const response = await fetch('http://localhost:8000/api/movies/add', {
+            const response = await fetch('https://bet-nettok-dep.vercel.app/api/api/movies/add', {
                 method: "POST",
                 headers: {
                     'Authorization': `Bearer ${token}`
@@ -52,7 +52,7 @@ function MovieAdd() {
 
     useEffect(() => {
         const fetchJenis = async () => {
-            const rejenis = await fetch('http://localhost:8000/api/jenis');
+            const rejenis = await fetch('https://bet-nettok-dep.vercel.app/api/api/jenis');
             const data = await rejenis.json();
             if (rejenis.ok) {
                 setJenisall(data);

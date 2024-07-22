@@ -16,7 +16,7 @@ function MovieUpdate() {
     useEffect(() => {
         const fetchMovieDetails = async () => {
             try {
-                const response = await fetch(`http://localhost:8000/api/movies/show/${id}`, {
+                const response = await fetch(`https://bet-nettok-dep.vercel.app/api/api/movies/show/${id}`, {
                     headers: {
                         'Authorization': `Bearer ${token}`
                     }

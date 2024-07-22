@@ -7,7 +7,7 @@ const [movies, setMovie] = useState([]);
 useEffect(()=>{
     const fetchMovie = async () => {
         try{
-            const response = await fetch('http://localhost:8000/api/movies/');
+            const response = await fetch('https://bet-nettok-dep.vercel.app/api/api/movies/');
             const data = await response.json();
             if(Array.isArray(data)){
                 setMovie(data);

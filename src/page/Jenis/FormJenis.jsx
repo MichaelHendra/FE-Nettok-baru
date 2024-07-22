@@ -9,7 +9,7 @@ function FormJenis() {
     useEffect(() => {
         const fetchJenis = async () => {
             try {
-                const response = await fetch('http://localhost:8000/api/jenis');
+                const response = await fetch('https://bet-nettok-dep.vercel.app/api/api/jenis');
                 const result = await response.json();
                 if (response.ok) {
                     setJenis(result);
@@ -25,7 +25,7 @@ function FormJenis() {
 
     const handleDelete = async (id) => {
         try {
-            const response = await fetch(`http://localhost:8000/api/jenis/delete/${id}`, {
+            const response = await fetch(`https://bet-nettok-dep.vercel.app/api/api/jenis/delete/${id}`, {
                 method: "DELETE",
                 headers: {
                     'Authorization': `Bearer ${token}`

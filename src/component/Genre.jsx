@@ -9,7 +9,7 @@ function Genre() {
     useEffect(() => {
         const fetchGenre = async () => {
             try {
-                const response = await fetch(`http://localhost:8000/api/jenis`);
+                const response = await fetch(`https://bet-nettok-dep.vercel.app/api/api/jenis`);
                 const data = await response.json();
                 console.log("Fetched data:", data);
                 if (Array.isArray(data)) {

@@ -59,12 +59,11 @@ const App = () => {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/movie" element={<Movies />} />
-                <Route path="/mylist" element={<Mylist />} />
                 <Route path="/play/:id" element={<Play openModal={openModal} openModalPay={openModalPay} />} />
                 <Route path="/genre/:id" element={<GenreMovie />} />
                 <Route path="/user/" element = {<User />} />
                 <Route path="/user/update/" element={<UserEdit />} />
-                <Route path="/subcribe" element ={<Subcribe />}/>
+                <Route path="/subscribe" element ={<Subcribe />}/>
                 <Route path="/search/:key" element ={<Search />}/>
                 <Route path="/jenisform" element= {<FormJenis />} />
                 <Route path="/jenisformadd" element ={<FormJenisAdd />}/>

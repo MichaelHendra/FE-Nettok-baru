@@ -11,7 +11,7 @@ const Modal = ({isOpen, onClose}) =>{
     const handleLogin = async (e) => {
         e.preventDefault();
         try{
-            const response = await axios.post('http://localhost:8000/api/login',{
+            const response = await axios.post('https://bet-nettok-dep.vercel.app/api/api/login',{
                 email: emailTok,
                 password: password,
             });
@@ -19,7 +19,6 @@ const Modal = ({isOpen, onClose}) =>{
                 const result = await response.data;
                 localStorage.setItem('token', result.token);
                 localStorage.setItem('userId', result.user.id); 
-                localStorage.setItem('valid', result.user.valid_date);
                 onClose();
                 window.location.reload();
             }else{

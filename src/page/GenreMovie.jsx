@@ -8,7 +8,7 @@ function GenreMovie () {
     useEffect(() => {
         const fetchMovies = async () => {
             try {
-                const response = await fetch(`http://localhost:8000/api/movie/genre/${id}`); 
+                const response = await fetch(`https://bet-nettok-dep.vercel.app/api/api/movie/genre/${id}`); 
                 const data = await response.json();
                 console.log("Fetched data:", data); // Log the fetched data to check its structure
                 if (Array.isArray(data)) {

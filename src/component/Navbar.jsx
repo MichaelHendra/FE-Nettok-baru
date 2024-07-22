@@ -27,7 +27,7 @@ function Navbar({ openModal, openModalRegister }) {
     try {
       const token = localStorage.getItem("token");
       console.log(token);
-      const response = await axios.post('http://localhost:8000/api/logout', {}, {
+      const response = await axios.post('https://bet-nettok-dep.vercel.app/api/api/logout', {}, {
         headers: {
           'Authorization': `Bearer ${token}`,
           'Content-Type': 'application/json'
@@ -37,6 +37,7 @@ function Navbar({ openModal, openModalRegister }) {
       if (response.data) {
         localStorage.removeItem("token");
         localStorage.removeItem("userId");
+        localStorage.removeItem("valid");
         setLogin(false);
         window.location.reload();
         console.log("Berhasil Coy");
@@ -57,7 +58,6 @@ function Navbar({ openModal, openModalRegister }) {
           <li><Link to="/movie" className={cssModule.LinkNav}>Movies</Link></li>
           {islogin ? (
             <>
-              <li><Link to='/mylist' className={cssModule.LinkNav}>My List</Link></li>
               <li className={cssModule.kanan}>
                 <Link to="/user" className={cssModule.btn}>Account</Link>
               </li>
